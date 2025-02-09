@@ -30,10 +30,9 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 
 
-# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "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")  # Replace with your key
+# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")  # Replace with your key
 
-OPENAI_API_KEY ="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"
-
+OPENAI_API_KEY =  os.environ.get('OPENAI_API_KEY')
 # Application definition
 
 INSTALLED_APPS = [
