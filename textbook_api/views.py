@@ -132,7 +132,7 @@ class UploadTextbook(APIView):
         Send extracted text to Gemini API for question generation.
         """
         try:
-            API_KEY = "AIzaSyBBYVqeD6eo1REqbiNYo6ylLvexyXtyvds"
+            API_KEY = os.environ.get('API_KEY')
 
             # Print raw request data for debugging
             # print("Raw request data:", request.data)
@@ -291,7 +291,6 @@ class GenerateQuestions(APIView):
 # class TestQuestions(APIView):
     
 #     def post(self, request):
-#         client = genai.Client(api_key="AIzaSyBBYVqeD6eo1REqbiNYo6ylLvexyXtyvds")
 #         response = client.models.generate_content(
 #             model="gemini-2.0-flash", contents="Create 10 mock qusetions from the book Introduction to C programming by Dennis Richie"
 #         )
@@ -307,7 +306,6 @@ from rest_framework.exceptions import ValidationError
 # class TestQuestions(APIView):
     
 #     def post(self, request):
-#         api_key="AIzaSyBBYVqeD6eo1REqbiNYo6ylLvexyXtyvds"
         
 #         try:
 #             print("Request Data:", request.data)
@@ -327,7 +325,6 @@ from rest_framework.exceptions import ValidationError
 #             print(f"Number of Questions: {num_questions}")
 #             print(f"Textbook Name: {textbook_name}")
             
-#             client = genai.Client(api_key="AIzaSyBBYVqeD6eo1REqbiNYo6ylLvexyXtyvds")
 #             response = client.models.generate_content(
 #                 model="gemini-2.0-flash",
 #                 contents=f"Create {num_questions} mock questions from the book {textbook_name}"
@@ -651,7 +648,6 @@ from rest_framework import status
 
 # class TestQuestions(APIView):
 #     # Class variable for API key
-#     API_KEY = "AIzaSyBBYVqeD6eo1REqbiNYo6ylLvexyXtyvds"
     
 #     def post(self, request):
 #         try:
@@ -731,7 +727,7 @@ from rest_framework import status
 
 class TestQuestions(APIView):
     # Class variable for API key
-    API_KEY = "AIzaSyBBYVqeD6eo1REqbiNYo6ylLvexyXtyvds"
+    API_KEY =  os.environ.get('API_KEY')
     
     def post(self, request):
         try:
