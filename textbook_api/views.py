@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from django.conf import settings
 from google import genai
 from PyPDF2 import PdfReader  
-
+import os
 
 # Function to search for a textbook online using Google Books API
 def search_textbook_online(name):
@@ -84,7 +84,7 @@ def generate_questions(text):
 # API View to upload a textbook
 class UploadTextbook(APIView):
     parser_classes = [MultiPartParser]
-    API_KEY = "AIzaSyBBYVqeD6eo1REqbiNYo6ylLvexyXtyvds"
+    API_KEY = os.environ.get('API_KEY')
 
     def post(self, request):
         file = request.FILES.get('file')
