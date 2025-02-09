@@ -28,10 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
-
-
-# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")  # Replace with your key
-
 OPENAI_API_KEY =  os.environ.get('OPENAI_API_KEY')
 # Application definition
 
